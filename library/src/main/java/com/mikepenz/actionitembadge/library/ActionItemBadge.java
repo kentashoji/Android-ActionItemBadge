@@ -122,6 +122,7 @@ public class ActionItemBadge {
     if (menuItem == null) return;
     if (icon == null) throw new IllegalArgumentException();
 
+    menuItem.setActionView(badgeStyle.getLayout());
     FrameLayout badge = (FrameLayout) menuItem.getActionView();
     ImageView imageView = (ImageView) badge.findViewById(R.id.menu_badge_icon);
 
@@ -132,7 +133,7 @@ public class ActionItemBadge {
       badgeView.setVisibility(View.VISIBLE);
       badgeView.setText("　");
       UIUtil.setBackground(badgeView, new BadgeDrawableBuilder().color(
-          badgeStyle.getColor())
+              badgeStyle.getColor())
               .colorPressed(badgeStyle.getColorPressed())
               .corners(50)
               .build(act)
