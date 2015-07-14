@@ -129,17 +129,7 @@ public class ActionItemBadge {
     UIUtil.setBackground(imageView, icon);
 
     View badgeView = badge.findViewById(R.id.menu_badge);
-    if (shouldShowBadge) {
-      badgeView.setVisibility(View.VISIBLE);
-      UIUtil.setBackground(badgeView, new BadgeDrawableBuilder()
-              .color(badgeStyle.getColor())
-              .colorPressed(badgeStyle.getColorPressed())
-              .corners(50)
-              .build(act)
-      );
-    } else {
-      badgeView.setVisibility(View.GONE);
-    }
+    badgeView.setVisibility(shouldShowBadge ? View.VISIBLE : View.GONE);
 
     badge.setOnClickListener(new View.OnClickListener() {
       @Override
