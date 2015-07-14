@@ -128,17 +128,15 @@ public class ActionItemBadge {
 
     UIUtil.setBackground(imageView, icon);
 
-    TextView badgeView = (TextView) badge.findViewById(R.id.menu_badge);
+    View badgeView = badge.findViewById(R.id.menu_badge);
     if (shouldShowBadge) {
       badgeView.setVisibility(View.VISIBLE);
-      badgeView.setText("　");
-      UIUtil.setBackground(badgeView, new BadgeDrawableBuilder().color(
-              badgeStyle.getColor())
+      UIUtil.setBackground(badgeView, new BadgeDrawableBuilder()
+              .color(badgeStyle.getColor())
               .colorPressed(badgeStyle.getColorPressed())
               .corners(50)
               .build(act)
       );
-      badgeView.setTextColor(badgeStyle.getTextColor());
     } else {
       badgeView.setVisibility(View.GONE);
     }
